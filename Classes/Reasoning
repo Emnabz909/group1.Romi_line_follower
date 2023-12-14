@@ -1,5 +1,3 @@
-#Here is where we will give an explanation of each class that we are using and the reason we needed them for our project:
-
 ## BNO055
 This class is used to we are able to retrieve various orientation-related data from our BNO055 sensor. The BNO055 is an
 IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination 

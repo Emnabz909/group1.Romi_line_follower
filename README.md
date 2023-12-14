@@ -1,9 +1,9 @@
 # group1.Romi_line_follower
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
-# Classes needed for Project
+## Classes needed for Project
 
-## BNO055
+### BNO055
 	import smbus
 	import time
 	import struct
@@ -346,6 +346,167 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 		while True:
 			print(bno.getVector(BNO055.VECTOR_EULER))
 			time.sleep(0.01)
+### Encoder
+	import pyb
+	from time import ticks_diff, ticks_us
+	from math import pi
+	
+	class Encoder:
+	    
+	    def __init__(self, timer, chA_pin, chB_pin):
+	        
+	        self.tim = timer
+	        
+	        self.upd_cnt = 0
+	        
+	        self.position = 0
+	        self.delta = 0
+	        
+	        self.chA = self.tim.channel(1, pin= chA_pin, mode = pyb.Timer.ENC_AB)
+	        self.chB = self.tim.channel(2, pin= chB_pin, mode = pyb.Timer.ENC_AB)
+	    
+	    def update(self):
+	        
+	        self.upd_cnt += 1
+	        
+	        self.position = self.tim.counter()
+	        
+	        self.ticks1 = ticks_us()
+	        
+	        if self.upd_cnt > 1:
+	            
+	            self.delta = self.position - self.position1
+	            
+	            self.ticksdiff = ticks_diff(self.ticks2,self.ticks1)
+	            
+	        else:
+	            
+	            self.delta = 0
+	        
+	        self.position1 = self.position
+	        
+	        self.ticks2 = self.ticks1
+	        
+	        
+	    def get_position(self):
+	        
+	        return self.position
+	    
+	    def get_delta(self):
+	        
+	        return self.delta
+	    
+	    def get_velocity(self):
+	        
+	        self.velocity = (self.delta * 2 * pi) / (1440 * self.ticksdiff * 1e-6)
+	        
+	        return self.velocity
+	    
+	    def zero(self):
+	        
+	        self.position = 0
+	        
+	        self.position1 = 0
+	        
+	        self.upd_cnt = 0
+	        
+	class ClosedLoop:
+	    
+	    def __init__(self, kp, ki, kd):
+	        
+	        self.kp = kp  # Proportional Gain
+	        self.ki = ki  # Integral Gain
+	        self.kd = kd  # Derivative Gain
+	        
+	        self.integral = 0
+	        self.derivative = 0
+	        self.count = 0
+	        self.prev_error = 0
+	
+	    def calculate(self, setpoint, measured_value, timedelta):
+	        
+	        self.error = setpoint - measured_value
+	        
+	        proportional = self.kp * self.error
+	        
+	        self.integral += self.ki * self.error * timedelta
+	        
+	        if self.prev_error == None:
+	            
+	            self.derivative = self.kd * ((self.error - self.prev_error)/(timedelta))
+	            
+	        else:
+	            
+	            self.derivative = 0
+	
+	        # Calculate the control signal
+	        control_signal = proportional + self.integral + self.derivative
+	        
+	        self.prev_error = self.error
+	        
+	        return control_signal
+### smbus
+	try:
+	    from machine import I2C
+	except ImportError:
+	    raise ImportError("Can't find the micropython machine.I2C class: "
+	                      "perhaps you don't need this adapter?")
+	
+	
+	class SMBus(I2C):
+	    """ Provides an 'SMBus' module which supports some of the py-smbus
+	        i2c methods, as well as being a subclass of machine.I2C
+	
+	        Hopefully this will allow you to run code that was targeted at
+	        py-smbus unmodified on micropython.
+	
+		    Use it like you would the machine.I2C class:
+	
+	            import usmbus.SMBus
+	
+	            bus = SMBus(1, pins=('G15','G10'), baudrate=100000)
+	            bus.read_byte_data(addr, register)
+	            ... etc
+		"""
+	
+	    def read_byte_data(self, addr, register):
+	        """ Read a single byte from register of device at addr
+	            Returns a single byte """
+	        return self.readfrom_mem(addr, register, 1)[0]
+	
+	    def read_i2c_block_data(self, addr, register, length):
+	        """ Read a block of length from register of device at addr
+	            Returns a bytes object filled with whatever was read """
+	        return self.readfrom_mem(addr, register, length)
+	
+	    def write_byte_data(self, addr, register, data):
+	        """ Write a single byte from buffer `data` to register of device at addr
+	            Returns None """
+	        # writeto_mem() expects something it can treat as a buffer
+	        if isinstance(data, int):
+	            data = bytes([data])
+	        return self.writeto_mem(addr, register, data)
+	
+	    def write_i2c_block_data(self, addr, register, data):
+	        """ Write multiple bytes of data to register of device at addr
+	            Returns None """
+	        # writeto_mem() expects something it can treat as a buffer
+	        data = bytearray(data)
+	        return self.writeto_mem(addr, register, data)
+	
+	    # The follwing haven't been implemented, but could be.
+	    def read_byte(self, *args, **kwargs):
+	        """ Not yet implemented """
+	        raise RuntimeError("Not yet implemented")
 
+    def write_byte(self, *args, **kwargs):
+        """ Not yet implemented """
+        raise RuntimeError("Not yet implemented")
 
+    def read_word_data(self, *args, **kwargs):
+        """ Not yet implemented """
+        raise RuntimeError("Not yet implemented")
 
+    def write_word_data(self, *args, **kwargs):
+        """ Not yet implemented """
+        raise RuntimeError("Not yet implemented")

@@ -15,3 +15,5 @@ used to intialize our closed loop controller with specified proportional, interg
 we are then able to return a control signal for use to use in our main file. 
 
 ## smbus
+This class is mostly used to ease the transition code from our BNO055 to our I2C bus. We were having trouble reading the data from our 
+IMU, and adding this class has made it easier to do so. 

@@ -24,5 +24,5 @@ This class is actually two classes in one. The first class is used for initialli
 ### smbus
 This class is mostly used to ease the transition code from our BNO055 to our I2C bus. We were having trouble reading the data from our IMU, and adding this class has made it easier to do so.
 
-## Main
+## Keynotes About Main
 (keynotes about main)

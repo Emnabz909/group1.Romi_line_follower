@@ -1,13 +1,19 @@
 # Romi Line Follower Bot
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
+# Table of Contents
+[Project Overview] (## Project Overview)
+
 ## Project Overview
-This years term project is to create a line following robot that is able to follow a given course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios.
+This years term project is to create a line following robot that is able to follow a given course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission. We 
 
 ## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
 
 ![Romi side](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/cb52cac2-b0c6-46d1-9a1f-1c4842be914c)
+
+## 3D Print CAD
+
 
 ## Sensors Used
 ### Reflective Sensors
@@ -22,7 +28,7 @@ We are using a BNO055 IMU that is located at the front of the robot, and a bit t
 ## Pin Allocations
 [Pin Table.pdf](https://github.com/Emnabz909/group1.Romi_line_follower/files/13679848/Pin.Table.pdf)
 
-## Video
+## Demo Video
 
 <div align="left">
       <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">

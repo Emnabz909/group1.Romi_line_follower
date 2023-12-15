@@ -83,11 +83,11 @@ Our code consists of one single task which is follow_track. This is because all 
 
     *   #### init
 
-        The init state of our follow_track task is state 0. This state initializes all of the variables for our run state.
+        The init state of our follow_track task is state 0. This state initializes all of the variables for our run state and will go to the run state if the button is pressed on the Romi.
 
     *   #### run
 
-        The run state is state 1 of the follow_track task. This state contains all of the code for our project. This state loops through a [set of if statements](#if-statements-for-sensor-readings) to figure out how far off of the line our romi is using the reflectance sensors. This distance is used as a measured value for a controller where the set point is 0 or no distance from the line. The output of that controller is the yaw rate the romi needs to have in order to follow the line. We then plug that yaw rate into the kinematic equations for our wheels to figure out an angular velocity for the left and right wheel. Those angular velocities are then used as a set points for another controller which measured point is the velocity of the wheel acquired from the encoders. The output of this controller is the duty cycle of each motor. Through both of these controllers the line following is achieved. With the code we made before [Bricking the Hardware](#bricking-the-hardware), we were also able to use the Front IR sensor to detect that the wall is there but not handle avoiding the wall. So before it bricked the romi just stops before the wall as seen in [the demo video](#demo-video).
+        The run state is state 1 of the follow_track task. This state contains all of the code for our project. This state loops through a [set of if statements](#if-statements-for-sensor-readings) to figure out how far off of the line our romi is using the reflectance sensors. This distance is used as a measured value for a controller where the set point is 0 or no distance from the line. The output of that controller is the yaw rate the romi needs to have in order to follow the line. We then plug that yaw rate into the kinematic equations for our wheels to figure out an angular velocity for the left and right wheel. Those angular velocities are then used as a set points for another controller which measured point is the velocity of the wheel acquired from the encoders. The output of this controller is the duty cycle of each motor. Through [both of these controllers](#controllers) the line following is achieved. With the code we made before [Bricking the Hardware](#bricking-the-hardware), we were also able to use the Front IR sensor to detect that the wall is there but not handle avoiding the wall. So before it bricked the romi just stops before the wall as seen in [the demo video](#demo-video).
 
 ## Bricking the Hardware
 The night before our demonstration when we finally had time to work on the Romi during finals week, our hardware bricked. We were hoping to finish up the wall obstacle handling using IR sensors to detect if the wall is there. We attached an IR sensor to the front and to the side of the Romi. For the software, we planned to detect the wall in the front and set a wall flag to enter a state that will turn 90 degrees to the right where the side IR sensor can now detect the wall. Then the Romi will go to a state that moves forward until the side IR sensor doesn't recognize the wall anymore and goes to a state that turns turn 90 degrees to the opposite direction and go back to the state to follow the wall and repeat wall follow and turn 90 until it sees the line again. Then it will return to the follow line state. [Example of Possible Code](#code-for-wall-handling)
@@ -99,6 +99,9 @@ The other main goal of the project was to get the Romi to return to the start. I
 ### If Statements for Sensor Readings
 <img width="400" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/bd00e07b-27c5-414e-adcb-28b959a55dcf"><br>
 [^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
+### Controllers
+<img width="400" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/9529b368-78a0-40b8-839b-7f25c994cf26">
+[^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L179C9-L197C51)
 
 ### Code for Wall Handling
 <img width="400" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/4e8b7a10-e1af-4678-b261-56df3ca1f544"><br>

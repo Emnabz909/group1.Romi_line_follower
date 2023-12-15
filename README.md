@@ -4,7 +4,9 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 ## Table of Contents
 [Project Overview](#project-overview)<br>
 [Our Romi Bot](#our-romi-bot)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3D Print CAD](#3d-print-cad)<br>
+[3D Print CAD](#3d-print-cad)<br>
+[Tasks](#tasks)<br>
+&nbsp;&nbsp;&nbsp;[follow_track](#follow_track)
 
 
 

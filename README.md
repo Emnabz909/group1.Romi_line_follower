@@ -5,7 +5,7 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 [Project Overview](#project-overview)
 
 ## Project Overview
-This years term project is to create a line following robot that is able to follow a given course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission. We 
+The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission. We 
 
 ## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
@@ -50,3 +50,5 @@ This class is mostly used to ease the transition code from our BNO055 to our I2C
 ### PID Controller
 
 ### Obstacle Detector
+
+[Go to Table of Contents](#table-of-contents)

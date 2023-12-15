@@ -81,8 +81,6 @@ Our code consists of one single task which is follow_track. This is because all 
 ## Appendix A (Code Snippets)
 ### If Statements for Sensor Readings
 <img width="516" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/bd00e07b-27c5-414e-adcb-28b959a55dcf"><br>
-
-[See in Code](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
-
+[Click to see in main.py](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
 
 [Return to Top](#romi-line-follower-bot)

@@ -98,14 +98,12 @@ The other main goal of the project was to get the Romi to return to the start. I
 ## Appendix A (Code Snippets)
 ### If Statements for Sensor Readings
 <img width="400" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/bd00e07b-27c5-414e-adcb-28b959a55dcf"><br>
-[^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
+
 ### Controllers
 <img width="700" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/9529b368-78a0-40b8-839b-7f25c994cf26"><br>
-[^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L179C9-L197C51)
 
 ### Variable Velocity
 <img width="975" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/241becca-4220-41b2-9adc-0c2cae5cf904"><br>
-[^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L148C9-L161C33)
 
 ### Wall Handling
 <img width="400" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/4e8b7a10-e1af-4678-b261-56df3ca1f544"><br>

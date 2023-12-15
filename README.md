@@ -1,9 +1,10 @@
 # Romi Line Follower Bot
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
-# Table of Contents
+## Table of Contents
 [Project Overview](#project-overview)<br>
-[Our Romi Bot](#our-romi-bot)
+[Our Romi Bot](#our-romi-bot)<br>
+
 
 ## Project Overview
 The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission. We 
@@ -47,9 +48,14 @@ This class is actually two classes in one. The first class is used for initialli
 ### smbus
 This class is mostly used to ease the transition code from our BNO055 to our I2C bus. We were having trouble reading the data from our IMU, and adding this class has made it easier to do so.
 
+## Tasks
+### Follow Track
+#### init
+#### run
+
 ## Keynotes About Main
 ### PID Controller
 
 ### Obstacle Detector
 
-[Go to Table of Contents](#table-of-contents)
+[Return to Table of Contents](#table-of-contents)

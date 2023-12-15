@@ -103,10 +103,10 @@ The other main goal of the project was to get the Romi to return to the start. I
 [^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
 
 ### Code for Wall Handling
-<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/4e8b7a10-e1af-4678-b261-56df3ca1f544">
-<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/2462e8f1-4cfa-461c-b44a-e7ee4d256597">
-<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/253b1101-540a-4ca9-a1e0-59dcebbef0cf">
-<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0797f887-2787-44f8-a3c9-7c8cf662e731">
+<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/4e8b7a10-e1af-4678-b261-56df3ca1f544"><br>
+<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/2462e8f1-4cfa-461c-b44a-e7ee4d256597"><br>
+<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/253b1101-540a-4ca9-a1e0-59dcebbef0cf"><br>
+<img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0797f887-2787-44f8-a3c9-7c8cf662e731"><br>
 
 ### Code for Position Tracking
 <img width="500" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/02d4c8ac-5f32-49b3-b893-b10ce1b790f5">

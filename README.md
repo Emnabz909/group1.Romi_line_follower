@@ -88,7 +88,7 @@ Our code consists of one single task which is follow_track. This is because all 
 <img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/996e0bfe-8cd4-4158-a207-ca525d3332b2">
 
 
-#### follow_line
+#### follow_track
 <img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0eeb9cce-42fb-4e67-8c8a-29b58eff41c1">
 
 [Return to Top](#romi-line-follower-bot)

@@ -2,7 +2,7 @@
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
 # Table of Contents
-[Project Overview](#project-overview)
+[Project Overview](#project-overview)<br>
 [Our Romi Bot](#our-romi-bot)
 
 ## Project Overview

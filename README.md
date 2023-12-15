@@ -2,41 +2,44 @@
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
 ## Table of Contents
-[Project Overview](#project-overview-)<br>
-[Our Romi Bot](#our-romi-bot-)<br>
-[3D Print CAD](#3d-print-cad-)<br>
-[Sensors Used](#sensors-used-)<br>
+[Project Overview](#project-overview)<br>
+[Our Romi Bot](#our-romi-bot)<br>
+[3D Print CAD](#3d-print-cad)<br>
+[Sensors Used](#sensors-used)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Reflectance Sensors](#reflectance-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IR Sensors](#ir-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IMU](#imu)<br>
-[Pin Allocations](#pin-allocations-)<br>
-[Demo Video](#demo-video-)<br>
-[Classes](#classes-)<br>
+[Pin Allocations](#pin-allocations)<br>
+[Demo Video](#demo-video)<br>
+[Classes](#classes)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[BNO055](#bno055)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Encoder](#encoder)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[smbus](#smbus)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Task-share](#task_share)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Cotask](#cotask)<br>
-[Tasks](#tasks-)<br>
+[Tasks](#tasks)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[follow_track](#follow_track)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[init](#init)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[run](#run)<br>
-[Bricking the Hardware](#bricking-the-hardware-)<br>
+[Bricking the Hardware](#bricking-the-hardware)<br>
+[Appendix A (Code Snippets)](#appendix-a-code-snippets)<br>
+[Appendix B (Task Related Diagrams)](#appendix-b-task-related-diagrams)<br>
 
 
 
-## Project Overview [^](#table-of-contents)
+
+## Project Overview
 The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission.
 
-## Our Romi Bot [^](#table-of-contents)
+## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
 
 ![Romi side](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/cb52cac2-b0c6-46d1-9a1f-1c4842be914c)
 
-## 3D Print CAD [^](#table-of-contents)
+## 3D Print CAD
 
 
-## Sensors Used [^](#table-of-contents)
+## Sensors Used
 ### Reflectance Sensors
 We are using one 8-array Reflectance Sensor inconjunction with two single-array Reflectance Sensors. These sensors are mostly used to detect the line that we are trying to follow. These sesnsors are connected to the front of our robot and placed to be as in the middle as we possible could. 
 
@@ -46,10 +49,10 @@ We are using two Infrared Sensors. These sensors are used to detect objects with
 ### IMU
 We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot so that it could be later used to calculate our pitch and yaw.
 
-## Pin Allocations [^](#table-of-contents)
+## Pin Allocations
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
 
-## Demo Video [^](#table-of-contents)
+## Demo Video
 Click Thumbnail to View Video
 <div align="left">
       <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">
@@ -57,7 +60,7 @@ Click Thumbnail to View Video
       </a>
 </div>
 
-## Classes [^](#table-of-contents)
+## Classes
 *   ### BNO055 
     This class is used to we are able to retrieve various orientation-related data from our BNO055 sensor. Most of the early code of the class are constants that define various register addresses, modes, and data types for our BNO055 sensor. The rest of the code is functions that we could possibly use. For example there are ways to change which mode the IMU is in. For our project we are using the NDOF mode. There is also a function to calibrate our sensor, so that the data we are using is as accurates as can be. The more important function that we used is the getVector function. This is how we are able to get the data from a ceratin sensor in the IMU. We use this function so that we are able to get the Euler Angles of our robot and use them the calculate our Yaw. 
 
@@ -73,7 +76,7 @@ Click Thumbnail to View Video
 *   ### cotask
     This task is used to create a cooperative mulitasking system. This will allow our tasks to act as generators and will also create a scheduler to run our tasks at based of our desired needs. 
 
-## Tasks [^](#table-of-contents)
+## Tasks
 Our code consists of one single task which is follow_track. This is because all that we are doing is constantly checking and updating the duty cycle for our motors based on the readings from our line sensors. Our plan was to have multiple states including the states that can handle the wall obstacle and returning to to zero position, but unfortunately our Romi hardware stopped working the night before our demo when we were working on that code. This is detailed further in [Bricking the Hardware](#bricking-the-hardware).
 
 *   ### follow_track
@@ -88,17 +91,24 @@ Our code consists of one single task which is follow_track. This is because all 
 
         The run state is state 1 of the follow_track task. This state contains all of the code for our project. This state loops through a [set of if statements](#if-statements-for-sensor-readings) to figure out how far off of the line our romi is using the reflectance sensors. This distance is used as a measured value for a controller where the set point is 0 or no distance from the line. The output of that controller is the yaw rate the romi needs to have in order to follow the line. We then plug that yaw rate into the kinematic equations for our wheels to figure out an angular velocity for the left and right wheel. Those angular velocities are then used as a set points for another controller which measured point is the velocity of the wheel acquired from the encoders. The output of this controller is the duty cycle of each motor. Through both of these controllers the line following is achieved. With the code we made before [Bricking the Hardware](#bricking-the-hardware), we were also able to use the Front IR sensor to detect that the wall is there but not handle avoiding the wall. So before it bricked the romi just stops before the wall as seen in [the demo video](#demo-video).
 
-## Bricking the Hardware [^](#table-of-contents)
+## Bricking the Hardware
+The night before our demonstration when we finally had time to work on the Romi during finals week, our hardware bricked. We were hoping to finish up the wall obstacle handling using IR sensors to detect if the wall is there. We attached an IR sensor to the front and to the side of the Romi. For the software, we planned to detect the wall in the front and enter a state that will turn 90 degrees to the right where the side IR sensor can now detect the wall. Then the Romi will go to a state that moves forward until the side IR sensor doesn't recognize the wall anymore and goes to a state that turns turn 90 degrees to the opposite direction and go back to the state to follow the wall and repeat wall follow and turn 90 until it sees the line again. Then it will return to the follow line state. [Example of Possible Code](#code-for-wall-handling)
 
-## Appendix A (Code Snippets) [^](#table-of-contents)
+The other main goal of the project was to get the Romi to return to the start. In order to do this, our plan was to take the heading from the IMU and the velocity data from the encoders to create X and Y coordinates of our Romi. [Example of Possible Code](#code-for-position-handling)
+
+
+## Appendix A (Code Snippets)
 ### If Statements for Sensor Readings
 <img width="516" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/bd00e07b-27c5-414e-adcb-28b959a55dcf"><br>
 [^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
 
-## Appendix B (Task Diagrams) [^](#table-of-contents)
+### Code for Wall Handling
+
+### Code for Position Tracking
+
+## Appendix B (Task Related Diagrams)
 ### Task Diagram
 <img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/996e0bfe-8cd4-4158-a207-ca525d3332b2">
-
 
 #### follow_track
 <img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0eeb9cce-42fb-4e67-8c8a-29b58eff41c1"><br>

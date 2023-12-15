@@ -35,7 +35,8 @@ We are using two Infrared Sensors. These sensors are used to detect objects with
 We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot so that it could be later used to calculate our pitch and yaw.
 
 ## Pin Allocations
-[Pin Table.pdf](https://github.com/Emnabz909/group1.Romi_line_follower/files/13679848/Pin.Table.pdf)
+![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
+
 
 ## Demo Video
 

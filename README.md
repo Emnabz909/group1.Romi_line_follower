@@ -2,26 +2,26 @@
 Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
 ## Table of Contents
-[Project Overview](#project-overview)<br>
-[Our Romi Bot](#our-romi-bot)<br>
-[3D Print CAD](#3d-print-cad)<br>
-[Sensors Used](#sensors-used)<br>
+[Project Overview](#project-overview-)<br>
+[Our Romi Bot](#our-romi-bot-)<br>
+[3D Print CAD](#3d-print-cad-)<br>
+[Sensors Used](#sensors-used-)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Reflectance Sensors](#reflectance-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IR Sensors](#ir-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IMU](#imu)<br>
-[Pin Allocations](#pin-allocations)<br>
-[Demo Video](#demo-video)<br>
-[Classes](#classes)<br>
+[Pin Allocations](#pin-allocations-)<br>
+[Demo Video](#demo-video-)<br>
+[Classes](#classes-)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[BNO055](#bno055)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Encoder](#encoder)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[smbus](#smbus)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Task-share](#task_share)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Cotask](#cotask)<br>
-[Tasks](#tasks)<br>
+[Tasks](#tasks-)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[follow_track](#follow_track)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[init](#init)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[run](#run)<br>
-[Bricking the Hardware](#bricking-the-hardware)<br>
+[Bricking the Hardware](#bricking-the-hardware-)<br>
 
 
 

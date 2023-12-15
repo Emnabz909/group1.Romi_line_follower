@@ -38,7 +38,7 @@ We are using a BNO055 IMU that is located at the front of the robot, and a bit t
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
 
 ## Demo Video
-
+Click Thumbnail to View Video
 <div align="left">
       <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">
          <img src="https://img.youtube.com/vi/LgOl3hI2dDQ/0.jpg" style="width:100%;">
@@ -66,7 +66,7 @@ Our code consists of one single task which is follow_track. This is because all 
 
 *   ### follow_track
 
-    text
+    This is our only task
 
     *   #### init
 
@@ -81,6 +81,13 @@ Our code consists of one single task which is follow_track. This is because all 
 ## Appendix A (Code Snippets)
 ### If Statements for Sensor Readings
 <img width="516" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/bd00e07b-27c5-414e-adcb-28b959a55dcf"><br>
-[See in main.py](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
+[^ See in main.py ^](https://github.com/Emnabz909/group1.Romi_line_follower/blob/efa484d757a301c30c7f6e89b4be0a8eb917c530/main.py#L121C1-L146C30)
+
+## Appendix B (Task Diagrams)
+### Task Diagram
+<img width="894" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/18e05289-f476-458f-aa38-8e61e4ee07ba">
+
+#### follow_line
+<img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0eeb9cce-42fb-4e67-8c8a-29b58eff41c1">
 
 [Return to Top](#romi-line-follower-bot)

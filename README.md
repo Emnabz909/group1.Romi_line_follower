@@ -8,6 +8,7 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 [Tasks](#tasks)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[follow_track](#follow_track)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[init](#init)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[run](#run)<br>
 [Bricking the Hardware](#bricking-the-hardware)<br>
 
 

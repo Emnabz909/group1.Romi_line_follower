@@ -25,8 +25,8 @@ We are using a BNO055 IMU that is located at the front of the robot, and a bit t
 ## Video
 
 <div align="left">
-      <a href="https://www.youtube.com/watch?v=5yLzZikS15k">
-         <img src="https://img.youtube.com/vi/5yLzZikS15k/0.jpg" style="width:100%;">
+      <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">
+         <img src="https://img.youtube.com/vi/LgOl3hI2dDQ/0.jpg" style="width:100%;">
       </a>
 </div>
 

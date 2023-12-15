@@ -27,7 +27,7 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
 
 ## Project Overview
-The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission.
+The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission when the hardware bricked. 
 
 ## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
@@ -35,6 +35,7 @@ The goal of our term project is to create a line following robot that is able to
 ![Romi side](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/cb52cac2-b0c6-46d1-9a1f-1c4842be914c)
 
 ## 3D Print
+The 3D print that we made to hold the sensors is depicted below. Along with the CAD.
 ![3D Print](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/ff470019-a069-4c41-aa0f-47380bf037c2)
 
 ## Sensors Used

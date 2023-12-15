@@ -14,7 +14,7 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 
 
 ## Project Overview
-The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission. We 
+The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission.
 
 ## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
@@ -37,7 +37,6 @@ We are using a BNO055 IMU that is located at the front of the robot, and a bit t
 ## Pin Allocations
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
 
-
 ## Demo Video
 
 <div align="left">
@@ -58,9 +57,7 @@ This class is mostly used to ease the transition code from our BNO055 to our I2C
 
 ### task_share
 
-
 ### cotask
-
 
 ## Tasks
 Our code consists of one single task which is follow_track. This is because all that we are doing is constantly checking and updating the duty cycle for our motors based on the readings from our line sensors. Our plan was to have multiple states including the states that can handle the wall obstacle and returning to to zero position, but unfortunately our Romi hardware stopped working the night before our demo when we were working on that code. This is detailed further in [Bricking the Hardware](#bricking-the-hardware).
@@ -75,13 +72,10 @@ Our code consists of one single task which is follow_track. This is because all 
 
     *   #### run
 
-        The run state is state 1 of the follow_track task. This state contains all of the code for our project.
-
-## Keynotes About Main
-### PID Controller
-
-### Obstacle Detector
+        The run state is state 1 of the follow_track task. This state contains all of the code for our project. This state loops through a set of if statements to figure out how far off of the 
+        line our romi is using the reflectance sensors. This distance is used as a measured value for a controller where the set point is 0 or no distance from the line. The output of that 
+        controller is the yaw rate the romi needs to have in order to follow the line. We then plug that yaw rate into the kinematic equations for our wheels to figure out an angular velocity for the left and right wheel. Those angular velocities are then used as a set points for another controller which measured point is the velocity of the wheel acquired from the encoders. The output of this controller is the duty cycle of each motor. Through both of these controllers the line following is achieved. With the code we made before [Bricking the Hardware](#bricking-the-hardware), we were also able to use the Front IR sensor to detect that the wall is there but not handle avoiding the wall. So before it bricked the romi just stops before the wall as seen in [the demo video](#demo-video).
 
 ## Bricking the Hardware
 
-[Return to Table of Contents](#table-of-contents)
+[Return to Top](#romi-line-follower-bot)

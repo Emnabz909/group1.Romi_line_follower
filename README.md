@@ -7,7 +7,7 @@ Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
 [3D Print CAD](#3d-print-cad)<br>
 [Tasks](#tasks)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[follow_track](#follow_track)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__init__](#__init__)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[init](#init)
 
 
 
@@ -60,7 +60,7 @@ Our code consists of one single task which is follow_track. This is because all 
 
     text
 
-    *   #### __init__
+    *   #### init
 
         The init state of our follow_track task is state 0. This state initializes all of the variables for our run state.
 

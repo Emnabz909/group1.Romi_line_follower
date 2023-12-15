@@ -23,7 +23,12 @@ We are using a BNO055 IMU that is located at the front of the robot, and a bit t
 [Pin Table.pdf](https://github.com/Emnabz909/group1.Romi_line_follower/files/13679848/Pin.Table.pdf)
 
 ## Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WCDmHljsinY?si=Lcuw83wuojFfNSIE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/MUQfKFzIOeU" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 ## Classes
 ### BNO055

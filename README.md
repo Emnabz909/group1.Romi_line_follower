@@ -22,6 +22,7 @@ Term project for ME405 by Elliott Bryniarski & Emmanuel Baez
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[init](#init)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[run](#run)<br>
 [Bricking the Hardware](#bricking-the-hardware)<br>
+[In Conclusion](#in-conclusion)<br>
 [Appendix A (Code Snippets)](#appendix-a-code-snippets)<br>
 [Appendix B (Task Related Diagrams)](#appendix-b-task-related-diagrams)<br>
 [Appendix C (Hand Calcs)](#appendix-c-hand-calcs)<br>

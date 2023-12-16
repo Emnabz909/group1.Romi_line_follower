@@ -11,8 +11,24 @@ from time import ticks_diff, ticks_us
 from math import pi
 
 class Encoder:
+    ''' !@brief       Interface with quadrature encoders
+        @details      This class is designed for use with a microcontroller,
+                      where you can configure encoder input pins and set up
+                      callback-based data updates for position and velocity
+                      tracking
+   '''
     
     def __init__(self, timer, chA_pin, chB_pin):
+        ''' !@brief        Constructs an encoder object
+             @details      This function is responsible for initializing
+                           hardware configuration for the encoder: including
+                           timer instances and pins. The functions is also 
+                           designed to continuously update and store position 
+                           and velocity data from the encoder
+             @param        tim: timer associated with the encoder
+             @param        chA: pin connected to Channel A of the encoder
+             @param        chB: pin connected to Channel B of the encoder
+        '''
         
         self.tim = timer
         
@@ -25,6 +41,14 @@ class Encoder:
         self.chB = self.tim.channel(2, pin= chB_pin, mode = pyb.Timer.ENC_AB)
     
     def update(self):
+        ''' !@brief       Updates encoder position and delta
+            @details      This function is responsible for tracking the
+                          encoder's position and calculating the change in 
+                          position (delta) over time. It uses the upd_cnt 
+                          attribute to determine when to calculate the delta 
+                          and stores the results in class attributes for 
+                          further use and data storage
+        ''' 
         
         self.upd_cnt += 1
         
@@ -48,20 +72,42 @@ class Encoder:
         
         
     def get_position(self):
+        ''' !@brief      Gets the most recent encoder position
+            @details     This function is responsible for getting the most
+                         recent encoder postiton as an integer for later use
+            @return      Returns the most recent encoder position as an
+                         integer
+       '''
         
         return self.position
     
     def get_delta(self):
+        ''' !@brief      Gets the most recent encoder delta
+            @details     This function is responsible for getting the most
+                         recent encoder delta as an integer for later use
+            @return      Returns the most recent encoder delta as an
+                         integer
+       '''  
         
         return self.delta
     
     def get_velocity(self):
+        ''' !@brief      Gets the most recent encoder velocity
+            @details     This function is responsible for getting the most
+                         recent encoder velocity as an integer for later use
+            @return      Returns the most recent encoder velocity as an
+                         integer
+       '''
         
         self.velocity = (self.delta * 2 * pi) / (1440 * self.ticksdiff * 1e-6)
         
         return self.velocity
     
     def zero(self):
+        ''' !@brief       Resets the encoder position to zero
+            @details      This function reinitializes our encoder data and
+                          sets it to a known initial state            
+        '''  
         
         self.position = 0
         

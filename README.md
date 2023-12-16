@@ -4,7 +4,7 @@ Term project for ME405 by Elliott Bryniarski & Emmanuel Baez
 ## Table of Contents
 [Project Overview](#project-overview)<br>
 [Our Romi Bot](#our-romi-bot)<br>
-[3D Print CAD](#3d-print)<br>
+[3D Print](#3d-print)<br>
 [Sensors Used](#sensors-used)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Reflectance Sensors](#reflectance-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IR Sensors](#ir-sensors)<br>

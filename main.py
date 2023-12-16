@@ -21,21 +21,52 @@ class follow_track:
    ''' !@brief        Interface used to get Romi to follow the line
         @details      This class is designed for use with a microcontroller,
                       and romi kit where you can configure various sensors
-                      to set up a line follwoing robot
+                      to set up a line following robot.
    '''    
     def __init__(self):
         ''' !@brief        Initiatalizes the controller with specific parameters
              @details      This constructor sets up the necessary parameters for 
                            controlling our romi with various sensors and actuators.
+            
              @param        r_w: Radius of the wheels
              @param        L: Width of the romi
              @param        v: Set velocity of romi
+            
              @param        wall: Flag for wall detection
+             
              @param        toggle_variable: Flag for our start button
+             
              @param        i2c: I2C communication setup
+             
              @param        bno: BNO055 sensor instance
              @param        cal_data: Calibration data for our BNO055 sensor
-            @param        bno: BNO055 sensor instance
+             @param        bno: BNO055 sensor instance
+            
+             @param        Mot_R_EN,Mot_L_EN: Enable pins for both motors
+             @param        Mot_R_DIR,Mot_L_DIR: Motor pins for both motors
+             @param        Mot_R_TIM,Mot_L_TIM: Timer pins for PWM control for both motors
+             @param        timR,timL: PWM frequency for both motors
+             @param        Mot_R_EN,Mot_L_EN: Enable pin for both motors
+            
+             @param        ENC_L_A,ENC_R_A: Encoder channel A for both encoders
+             @param        ENC_L_B,ENC_R_B: Encoder channel B for both encoders
+             @param        ENC_L_tim,ENC_R_tim: Encoder timer for counting for both encoders
+             
+             @param        L4_sens,L3_sens_adc,L2_sens_adc,L1_sens_adc,L_sens_adc: Analog pins for the left side sensors of the 8-array
+             @param        R4_sens,R3_sens_adc,R2_sens_adc,R1_sens_adc,R_sens_adc: Analog pins for the right side sensors or the 8-array
+             @param        sens_p_gain: Proportional gain for line following
+             @param        sens_i_gain: Integral gain for line following
+             @param        sens_d_gain: Derivative gain for line following
+             @param        line_crtl: PID controllers for line following
+
+             @param        omega_p_gain: Proportional gain for motor speed control
+             @param        omega_i_gain: Integral gain for motor speed control
+             @param        omega_d_gain: Derivative gain for motor speed control
+             @param        omega_L_crtl,omega_R_crtl: PID controllers for both wheel speeds
+
+             @param        button_pin: Pin for external button interrupt
+
+             @param        IR_Front,IR_side: Pins for both infrared sensors
         '''
         # Constants
         self.r_w = 0.035 # Radius of Wheels
@@ -134,6 +165,15 @@ class follow_track:
         self.IR_side = pyb.Pin(IR_side_pin, mode = pyb.Pin.IN)
         
     def run(self):
+      '''!@brief        Main control loop for romi's behavior
+          @details      This section of the code performs the line following, gyroscope-based speed control,
+                        encoder and motor control, as well as wall detection. The line following is done by
+                        getting data from our line sensor and adjusting romi's position based of the data. If
+                        the gyrosocpe detects significant rotation, then it will slow down romi. If minimal
+                        rotation is detected the romi will speed up after a delay. The encoder and motor controls
+                        are based of yaw rates that are calculated. Based of these calculations romi's motor speeds
+                        change based of actual velocities. 
+      '''
         
         if self.L3_sens_adc.read() > 4000 and self.R3_sens_adc.read() > 4000:
             dis_from_line = 0

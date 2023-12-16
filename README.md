@@ -5,16 +5,16 @@ Term project for ME405 by Elliott Bryniarski & Emmanuel Baez
 [Project Overview](#project-overview)<br>
 [Our Romi Bot](#our-romi-bot)<br>
 [3D Print](#3d-print)<br>
+[Demo Video](#demo-video)<br>
 [Sensors Used](#sensors-used)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Reflectance Sensors](#reflectance-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IR Sensors](#ir-sensors)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[IMU](#imu)<br>
 [Pin Allocations](#pin-allocations)<br>
-[Demo Video](#demo-video)<br>
 [Classes](#classes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[BNO055](#bno055)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[BNO055](#bno055-github-ghirlekar)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Encoder](#encoder)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[smbus](#smbus)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[smbus](#smbus-github-gkluoe)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Task-share](#task_share)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Cotask](#cotask)<br>
 [Tasks](#tasks)<br>
@@ -27,7 +27,7 @@ Term project for ME405 by Elliott Bryniarski & Emmanuel Baez
 
 
 ## Project Overview
-The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point by any means. The robot must be able to compete on multiple tracks to prevent being hard coded for certain scenarios. Our project was initially going very well until the night before our submission when the hardware bricked. 
+The goal of our term project is to create a line following robot that is able to follow a line on a race course with multiple obstacles including: dashed lines, hashed lines, rounded corners, and a wall object to go around. Once the robot has gone around the course once it must also attempt to go back to the starting point. The same code must be able to compete on multiple tracks to prevent presetting variables to know what part of the track you are on and not using feedback from sensors. Our project was initially going very well until the hardware bricked and we could not test our wall avoiding or position tracking code.
 
 ## Our Romi Bot
 ![Romi front](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/93658fca-04e8-4b75-b6b9-9817f8c916fd)
@@ -53,7 +53,7 @@ Click Thumbnail to View Video
 
 ## Sensors Used
 *   ### Reflectance Sensors
-    We are using one 8-array Reflectance Sensor inconjunction with two single-array Reflectance Sensors. These sensors are mostly used to detect the line that we are trying to follow. These sesnsors are connected to the front of our robot and placed to be as in the middle as we possible could.
+    We are using one 8-array Reflectance Sensor along with two double-array Reflectance Sensors. These sensors are used to detect if the line is below them, and based on the geometry of the robot which we know, we can tell where the robot needs to go to be centered on the line. These sesnsors are connected to the front of our robot in the center.
     
     ![reflectance sensors](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/d47f3f6b-e494-4833-a40d-72bd890875b8)
 
@@ -63,13 +63,14 @@ Click Thumbnail to View Video
 ![ir](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/c4d35d18-1fe0-435b-b905-36806245fb91)
 
 *   ### IMU
-    We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot so that it could be later used to calculate our pitch and yaw.
+    We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an 9-DOF IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot including the heading. We use this feedback to tell if the bot is turning and also in the position tracking.
     
     ![bno](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/6324abb7-98da-42c7-94df-30f90e19da53)<br>
 
 [Back to Top](#romi-line-follower-bot)
 
 ## Pin Allocations
+Below is tables that depict what pins each sensor is connected to. And also a diagram of the pin layout.
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)<br>
 <img width="972" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/f23bbfa8-062d-457b-a83a-256fd5945468">
 

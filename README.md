@@ -56,17 +56,17 @@ Click Thumbnail to View Video
 
 ## Sensors Used
 *   ### Reflectance Sensors
-    We are using one [8-array Reflectance Sensor](https://www.pololu.com/product/4248) along with two single-array Reflectance Sensors. These sensors are used to detect if the line is below them, and based on the geometry of the robot which we know, we can tell where the robot needs to go to be centered on the line. These sesnsors are connected to the front of our robot in the center.
+    We are using one [8-array Reflectance Sensor](https://www.pololu.com/product/4248) along with two [single-array Reflectance Sensors](https://www.pololu.com/product/4242). These sensors are used to detect if the line is below them, and based on the geometry of the robot which we know, we can tell where the robot needs to go to be centered on the line. These sesnsors are connected to the front of our robot in the center.
     
     ![reflectance sensors](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/d47f3f6b-e494-4833-a40d-72bd890875b8)
 
 *   ### IR Sensors
-    We are using two Infrared Sensors. These sensors are used to detect objects within the path of our robot. One sensor is at the front so that it will be able to detect the wall in front of it, while the other is to the side to be able to detect once the robot has passed the wall.
+    We are using two [Infrared Sensors](https://www.amazon.com/dp/B0B74QJV8H?psc=1&ref=ppx_yo2ov_dt_b_product_details). These sensors are used to detect objects within the path of our robot. One sensor is at the front so that it will be able to detect the wall in front of it, while the other is to the side to be able to detect once the robot has passed the wall.
      
 ![ir](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/c4d35d18-1fe0-435b-b905-36806245fb91)
 
 *   ### IMU
-    We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an 9-DOF IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot including the heading. We use this feedback to tell if the bot is turning and also in the position tracking.
+    We are using a [BNO055 IMU](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2472/5699182?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=Pmax_Shopping_Product_Silicon%20Valley%20Category%20Awareness&utm_term=&utm_content=&utm_id=go_cmp-20773039395_adg-_ad-__dev-c_ext-_prd-5699182_sig-Cj0KCQiAj_CrBhD-ARIsAIiMxT8pJTmY1CzgpDeoNfldrNdTTDs2zvcY8C21eEwcTdVhm81UirK_qJgaAofnEALw_wcB&gad_source=1&gclid=Cj0KCQiAj_CrBhD-ARIsAIiMxT8pJTmY1CzgpDeoNfldrNdTTDs2zvcY8C21eEwcTdVhm81UirK_qJgaAofnEALw_wcB) that is located at the front of the robot, and a bit to the left. The BNO055 is an 9-DOF IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot including the heading. We use this feedback to tell if the bot is turning and also in the position tracking.
     
     ![bno](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/6324abb7-98da-42c7-94df-30f90e19da53)<br>
 

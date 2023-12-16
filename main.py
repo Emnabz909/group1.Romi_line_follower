@@ -18,8 +18,25 @@ import cotask
 import gc    
 
 class follow_track:
-    
+   ''' !@brief        Interface used to get Romi to follow the line
+        @details      This class is designed for use with a microcontroller,
+                      and romi kit where you can configure various sensors
+                      to set up a line follwoing robot
+   '''    
     def __init__(self):
+        ''' !@brief        Initiatalizes the controller with specific parameters
+             @details      This constructor sets up the necessary parameters for 
+                           controlling our romi with various sensors and actuators.
+             @param        r_w: Radius of the wheels
+             @param        L: Width of the romi
+             @param        v: Set velocity of romi
+             @param        wall: Flag for wall detection
+             @param        toggle_variable: Flag for our start button
+             @param        i2c: I2C communication setup
+             @param        bno: BNO055 sensor instance
+             @param        cal_data: Calibration data for our BNO055 sensor
+            @param        bno: BNO055 sensor instance
+        '''
         # Constants
         self.r_w = 0.035 # Radius of Wheels
         self.L = 0.149   # Width of Car

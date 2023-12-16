@@ -125,7 +125,7 @@ The other main goal of the project was to get the Romi to return to the start. I
 ![closed loop controls](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/c897d6eb-8560-4227-bb09-05e9a28fcd5e)
 
 ### BNO055 Get Data Function
-![get data](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/48b5a14d-de2a-48b5-aa3b-7e8b11b3fee8)
+![get data](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/73b13286-2b12-4abd-9535-c88ce8837309)
 
 ## Appendix B (Task Related Diagrams)
 ### Task Diagram

@@ -1,5 +1,5 @@
 # Romi Line Follower Bot
-Term project for ME405 by Elliott Joseph Bryniarski & Emmanuel Baez
+Term project for ME405 by Elliott Bryniarski & Emmanuel Baez
 
 ## Table of Contents
 [Project Overview](#project-overview)<br>
@@ -147,4 +147,4 @@ The other main goal of the project was to get the Romi to return to the start. I
 #### follow_track
 <img width="723" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/0eeb9cce-42fb-4e67-8c8a-29b58eff41c1"><br>
 
-## [Return to Top](#romi-line-follower-bot)
+[Back to Top](#romi-line-follower-bot)

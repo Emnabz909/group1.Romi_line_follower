@@ -64,7 +64,9 @@ Click Thumbnail to View Video
     ![bno](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/6324abb7-98da-42c7-94df-30f90e19da53)
 
 ## Pin Allocations
-![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
+![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)<br>
+<img width="972" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/f23bbfa8-062d-457b-a83a-256fd5945468">
+
 
 ## Classes
 *   ### BNO055 

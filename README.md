@@ -49,6 +49,8 @@ Click Thumbnail to View Video
       </a>
 </div>
 
+[Back to Top](#romi-line-follower-bot)
+
 ## Sensors Used
 *   ### Reflectance Sensors
     We are using one 8-array Reflectance Sensor inconjunction with two single-array Reflectance Sensors. These sensors are mostly used to detect the line that we are trying to follow. These sesnsors are connected to the front of our robot and placed to be as in the middle as we possible could.
@@ -63,11 +65,15 @@ Click Thumbnail to View Video
 *   ### IMU
     We are using a BNO055 IMU that is located at the front of the robot, and a bit to the left. The BNO055 is an IMU that we are using so that we are to get data like acceleration, orientation, and angular rates. The BNO055 is a combination  of an accelerometer, magnetometer, and gyrocosope. We are using the IMU to get the Euler Angles of our bot so that it could be later used to calculate our pitch and yaw.
     
-    ![bno](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/6324abb7-98da-42c7-94df-30f90e19da53)
+    ![bno](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/6324abb7-98da-42c7-94df-30f90e19da53)<br>
+
+[Back to Top](#romi-line-follower-bot)
 
 ## Pin Allocations
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)<br>
 <img width="972" alt="image" src="https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/f23bbfa8-062d-457b-a83a-256fd5945468">
+
+[Back to Top](#romi-line-follower-bot)
 
 
 ## Classes
@@ -105,6 +111,8 @@ Our code consists of one single task which is follow_track. This is because all 
 The night before our demonstration when we finally had time to work on the Romi during finals week, our hardware bricked. We were hoping to finish up the wall obstacle handling using IR sensors to detect if the wall is there. We attached an IR sensor to the front and to the side of the Romi. For the software, we planned to detect the wall in the front and set a wall flag to enter a state that will turn 90 degrees to the right where the side IR sensor can now detect the wall. Then the Romi will go to a state that moves forward until the side IR sensor doesn't recognize the wall anymore and goes to a state that turns turn 90 degrees to the opposite direction and go back to the state to follow the wall and repeat wall follow and turn 90 until it sees the line again. Then it will return to the follow line state. [Example of Possible Code](#wall-handling)
 
 The other main goal of the project was to get the Romi to return to the start. In order to do this, our plan was to take the heading from the IMU and the velocity data from the encoders to create X and Y coordinates of our Romi. [Example of Possible Code](#position-tracking)
+
+[Back to Top](#romi-line-follower-bot)
 
 
 ## Appendix A (Code Snippets)

@@ -77,14 +77,14 @@ Click Thumbnail to View Video
 
 
 ## Classes
-*   ### BNO055 
-    This class is used to we are able to retrieve various orientation-related data from our BNO055 sensor. Most of the early code of the class are constants that define various register addresses, modes, and data types for our BNO055 sensor. The rest of the code is functions that we could possibly use. For example there are ways to change which mode the IMU is in. For our project we are using the NDOF mode. There is also a function to calibrate our sensor, so that the data we are using is as accurates as can be. The more important function that we used is the getVector function. This is how we are able to get the data from a ceratin sensor in the IMU. We use this function so that we are able to get the Euler Angles of our robot and use them the calculate our Yaw. 
+*   ### [BNO055 (Github: ghirlekar)](https://github.com/ghirlekar/bno055-python-i2c)
+    This class is used to we are able to retrieve various orientation-related data from our BNO055 sensor. Most of the early code of the class are constants that define various register addresses, modes, and data types for our BNO055 sensor. The rest of the code is functions that we could possibly use. For example there are ways to change which mode the IMU is in. For our project we are using the NDOF mode. There is also a function to calibrate our sensor, so that the data we are using is as accurates as can be. The more important function that we used is the getVector function. This is how we are able to get the data from a ceratin sensor in the IMU. We use this function so that we are able to get the Euler Angles of our robot and use them the calculate our Yaw. We used a class created by ghirlekar on github and edited to fit the needs of our project.
 
 *   ### Encoder
     This class is actually two classes in one. The first class is used for initiallizing our Encoders. This class is used so that we are ableto keep track of our position, change in position, and velocity. The other class that is in here is our ClosedLoop class. This class is used to intialize our closed loop controller with specified proportional, intergral, and derivative gains. Once we have these calculatedwe are then able to return a control signal for use to use in our main file. 
 
-*   ### smbus
-    This class is mostly used to ease the transition code from our BNO055 to our I2C bus. We were having trouble reading the data from our IMU, and adding this class has made it easier to do so.
+*   ### [smbus (Github: gkluoe)](https://github.com/gkluoe/micropython-smbus)
+    This is a class we are using as a wrapper so the python module smbus is available on micropython which is what our microcontrollers use. We got this wrapper from gkluoe on github.
 
 *   ### task_share
     This task is used to communicate data between our taskes without the risk of data corruption.

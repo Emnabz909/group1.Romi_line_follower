@@ -117,6 +117,9 @@ The other main goal of the project was to get the Romi to return to the start. I
 
 [Back to Top](#romi-line-follower-bot)
 
+## In Conclusion
+We came into the project knowing very little about the hardware we were using other than basic knowledge of pin assignment and reading sensors. It was a steady but slow climb from that point to now. It definitely had its ups and downs, most notably the hardware failing the day before demos, but along the way we learned a lot about sensor feedback, controls, and python as a tool for mechatronics. Having a lot of freedom to design our system and orient the sensors to achieve the goals lead to a lot of healthy iterating. Going through the troubleshooting of this robot was one of the best practices for learning python. Another key skill we gained from this project is the ability to read through data sheets for the sensors and other peripherals we are using and understand how to wire them. These are the most notable things we learned but alonside those we gained a lot of knowledge about what kind of sensors are used for different applications and how to use the sensors for our own applications. Regardless of the fact that we never got to complete the track, we are still proud of how much we learned this quarter and we are looking forward to how we can apply this knowledge to our future projects. 
+
 
 ## Appendix A (Code Snippets)
 ### If Statements for Sensor Readings

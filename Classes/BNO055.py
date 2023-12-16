@@ -1,3 +1,11 @@
+'''   This code is used from a differenct GitHub repository. But the main purpose of this class is so that we have 
+      access to our IMU. Its starts off by initializing various constants for register addresses, power modes, operation,
+      modes, and vector types used by our BNO055 sensor. One thing we have to do first before we are able to use the IMU
+      is calibrate it. Luckily with this class we are able to get the calibration data as well as be able to set in our
+      code so that we dont have to continously calibrate it. With this class we are also able to extract data from the 
+      various compnonet of the BNO055. So because of this class and the help of the smbus class, we are able to retrieve
+      the gyroscope data from IMU and use it in our code to control our romi. 
+'''
 import smbus
 import time
 import struct

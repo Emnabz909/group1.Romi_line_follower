@@ -39,7 +39,13 @@ The 3D print that we made to hold the sensors is depicted below. Along with the 
 ![3D Print](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/ff470019-a069-4c41-aa0f-47380bf037c2)<br>
 ![image](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/f1a8eb51-ae62-40a8-9f4f-700a9e47bbce)
 
-
+## Demo Video
+Click Thumbnail to View Video
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">
+         <img src="https://img.youtube.com/vi/LgOl3hI2dDQ/0.jpg" style="width:100%;">
+      </a>
+</div>
 
 ## Sensors Used
 *   ### Reflectance Sensors
@@ -59,14 +65,6 @@ The 3D print that we made to hold the sensors is depicted below. Along with the 
 
 ## Pin Allocations
 ![pin table](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/fdb79fda-71a2-4c41-86b2-443f6cfe9b36)
-
-## Demo Video
-Click Thumbnail to View Video
-<div align="left">
-      <a href="https://www.youtube.com/watch?v=LgOl3hI2dDQ">
-         <img src="https://img.youtube.com/vi/LgOl3hI2dDQ/0.jpg" style="width:100%;">
-      </a>
-</div>
 
 ## Classes
 *   ### BNO055 

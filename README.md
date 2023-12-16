@@ -36,7 +36,10 @@ The goal of our term project is to create a line following robot that is able to
 
 ## 3D Print
 The 3D print that we made to hold the sensors is depicted below. Along with the CAD.
-![3D Print](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/ff470019-a069-4c41-aa0f-47380bf037c2)
+![3D Print](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/ff470019-a069-4c41-aa0f-47380bf037c2)<br>
+![image](https://github.com/Emnabz909/group1.Romi_line_follower/assets/106140514/f1a8eb51-ae62-40a8-9f4f-700a9e47bbce)
+
+
 
 ## Sensors Used
 *   ### Reflectance Sensors

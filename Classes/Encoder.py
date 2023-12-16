@@ -116,8 +116,22 @@ class Encoder:
         self.upd_cnt = 0
         
 class ClosedLoop:
+    ''' !@brief       PID Controler for a closed loop system
+         @details     This class represents a PID controller used in closed-loop control systems. 
+                      The controller continuously adjusts the system's input based on the difference
+                      between the desired setpoint and the actual measured value. 
+    '''
     
     def __init__(self, kp, ki, kd):
+         ''''  @brief       Initializes a ClosedLoop controller with PID gains
+               @details     This function is responsible for initializing a ClosedLoop
+                            controller with the provided Proportional, Integral, and
+                            Derivative gains.
+
+               @param       kp: Proportional Gain
+               @param       ki: Integral Gain
+               @param       kd: Derivative Gain
+         '''
         
         self.kp = kp  # Proportional Gain
         self.ki = ki  # Integral Gain
@@ -129,6 +143,15 @@ class ClosedLoop:
         self.prev_error = 0
 
     def calculate(self, setpoint, measured_value, timedelta):
+        '''@brief       Calculates the control signal for a ClosedLoop controller
+           @details     This function is responsible for calculating the control
+                        signal based on the provided setpoint, measured value, and
+                        time difference.
+
+           @param       setpoint: The desired value or setpoint
+           @param       measured_value: The actual measured value
+           @param       timedelta: The time difference between the current and previous calculations
+    '''
         
         self.error = setpoint - measured_value
         

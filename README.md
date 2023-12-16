@@ -56,7 +56,7 @@ Click Thumbnail to View Video
 
 ## Sensors Used
 *   ### Reflectance Sensors
-    We are using one 8-array Reflectance Sensor along with two double-array Reflectance Sensors. These sensors are used to detect if the line is below them, and based on the geometry of the robot which we know, we can tell where the robot needs to go to be centered on the line. These sesnsors are connected to the front of our robot in the center.
+    We are using one [8-array Reflectance Sensor](https://www.pololu.com/product/4248) along with two single-array Reflectance Sensors. These sensors are used to detect if the line is below them, and based on the geometry of the robot which we know, we can tell where the robot needs to go to be centered on the line. These sesnsors are connected to the front of our robot in the center.
     
     ![reflectance sensors](https://github.com/Emnabz909/group1.Romi_line_follower/assets/147099440/d47f3f6b-e494-4833-a40d-72bd890875b8)
 
